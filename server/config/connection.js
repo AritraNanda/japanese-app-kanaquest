@@ -1,5 +1,4 @@
-import mongoose from 'mongoose'; // import mongoose for MongoDB connection
-
+import mongoose from 'mongoose'; 
 // set up connection to MongoDB
 const connectDB = async (url) => {
   try {
@@ -9,10 +8,13 @@ const connectDB = async (url) => {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
+
+
     console.log('MongoDB Connected!');
   } catch (err) {
     console.log(err.message);
   }
 };
+
 
 export default connectDB;

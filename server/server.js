@@ -14,6 +14,7 @@ const PORT = process.env.PORT || 3001;
 
 // Create a new instance of an Apollo server with the GraphQL schema
 const server = new ApolloServer({
+  
   typeDefs,
   resolvers,
   context: authMiddleware, // This ensures that every request performs an authentication check, and the updated request object will be passed to the resolvers as the context.
@@ -33,6 +34,7 @@ app.get('*', (req, res) => {
 
 const startServer = async (typeDefs, resolvers) => {
   try {
+
     await server.start(); // Start the Apollo server
     server.applyMiddleware({ app }); // integrate our Apollo server with the Express application as middleware
     connectDB(process.env.MONGODB_URI); // connect to MongoDB
@@ -40,6 +42,7 @@ const startServer = async (typeDefs, resolvers) => {
       console.log(`Server is running on port http://localhost:${PORT}`);
       console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
     });
+
   } catch (error) {
     console.log(error);
   }
