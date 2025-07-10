@@ -3,7 +3,9 @@ import { kanjiData } from '../data';
 import KanjiLesson from './KanjiLesson';
 
 const KanjiChart = () => {
-  return (
+  return (     
+
+    
     <section id="kanjiChart">
       <h3 className="font-bold mb-4 text-xl">Kanji Chart</h3>
       {/* Kanji Lessons */}
